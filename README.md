@@ -17,10 +17,10 @@ import I18n from '@marcoparrone/i18n';
 
 The constructor accepts these optional parameters:
 
- * callback_after_translation: a callback function which will be called after tranlation (for example, a function which will reload all the strings in the web page);
+ * callback_after_translation: a callback function which will be called after the translation (for example, a function which will reload all the strings in the web page);
  * language: the target language: if not provided, it will be loaded from localStorage or from the user browser, or it will default to 'en';
  * messages_path: path where to find the localization files, which must be named language.json: for example, en.json, it.json, etc... defaults to "i18n/";
- * localstorage_prefix: the prefix for loading and saving the language setting in the browser localStorage. defaults to "" (the language will be saved to the "language" localStorage item);
+ * localstorage_prefix: the prefix for loading and saving the language setting in the browser localStorage. defaults to "i18n_lib_" (the language will be saved to the "i18n_lib_language" localStorage item);
  * supported_languages: an array containing the codes for the supported languages. defaults to:
 ```js
  ['en', 'af', 'sq', 'am', 'ar', 'hy', 'az', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'ceb', 'ny', 'zh-CN', 'zh-TW', 'co', 'hr', 'cs', 'da', 'nl', 'eo', 'et', 'tl', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gu', 'ht', 'ha', 'haw', 'iw', 'hi', 'hmn', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jw', 'kn', 'kk', 'km', 'rw', 'ko', 'ku', 'ky', 'lo', 'la', 'lv', 'lt', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no', 'or', 'ps', 'fa', 'pl', 'pt', 'pa', 'ro', 'ru', 'sm', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so', 'es', 'su', 'sw', 'sv', 'tg', 'ta', 'tt', 'te', 'th', 'tr', 'tk', 'uk', 'ur', 'ug', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo', 'zu', 'he', 'zh']
@@ -36,7 +36,7 @@ this.i18n = new I18n(this.saveState);
 
 For changing the language, it's possible to call the change_language_translate_and_save_to_localStorage method, which accepts the language code as parameter.
 
-In this example, event.targe.value cotains the code of the selected language (for example, 'en', 'it', etc...):
+In this example, event.target.value cotains the code of the selected language (for example, 'en', 'it', etc...):
 
 ```js
 this.i18n.change_language_translate_and_save_to_localStorage(event.target.value);
@@ -70,9 +70,9 @@ $ cat  public/i18n/en.json
 
 ## Using the translations
 
-The translation are available in the text instance variable.
+The translations are available in the text instance variable.
 
-for examlple, inside a custom react component, this method reloads the strings:
+for example, inside a custom react component, this method reloads the strings:
 
 ```js
 const defaultText = require ('./en.json');

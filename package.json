@@ -1,0 +1,25 @@
+{
+  "name": "@marcoparrone/i18n",
+  "version": "1.0.1",
+  "description": "Internationalization library for JavaScript.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoparrone/i18n.git"
+  },
+  "keywords": [
+    "i18n",
+    "l10n",
+    "internationalization",
+    "localization"
+  ],
+  "author": "Marco Parrone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcoparrone/i18n/issues"
+  },
+  "homepage": "https://github.com/marcoparrone/i18n#readme"
+}

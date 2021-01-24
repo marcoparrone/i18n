@@ -74,7 +74,7 @@ export default class I18n {
     }
 
     save_language_to_localStorage () {
-        localStorage.setItem(this.localstorage_prefix + 'language', JSON.stringify(this.language));
+        localStorage.setItem(this.localstorage_prefix + 'language', this.language);
     }
 
     translate () {

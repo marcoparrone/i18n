@@ -64,7 +64,7 @@ $ cat  public/i18n/en.json
     "text_close_label": "close",
     "text_youwon": "You Won!",
     "text_youlost": "You Lost!",
-    "text_drawn": "The game was drawn!",
+    "text_drawn": "The game was drawn!"
 }
 ```
 

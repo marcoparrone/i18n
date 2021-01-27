@@ -7,11 +7,15 @@ Internationalization library for JavaScript
 npm install @marcoparrone/i18n
 ```
 
-## Webpack Usage
+## Usage
+
+After the installation, to import the module:
 
 ```js
 import I18n from '@marcoparrone/i18n';
 ```
+
+Read further for more information.
 
 ## Initialization
 

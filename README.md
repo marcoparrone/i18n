@@ -88,30 +88,15 @@ class Board extends React.Component {
       if (this.i18n.text) {
         this.setState({
 //...
-            text_appname: this.i18n.text['text_appname'],
-            text_restart_label: this.i18n.text['text_restart_label'],
-            text_settings_label: this.i18n.text['text_settings_label'],
-            text_help_label: this.i18n.text['text_help_label'],
-            text_about_label: this.i18n.text['text_about_label'],
-            text_close_label: this.i18n.text['text_close_label'],
-            text_youwon: this.i18n.text['text_youwon'],
-            text_youlost: this.i18n.text['text_youlost'],
-            text_drawn: this.i18n.text['text_drawn'],
+        language: this.i18n.language,
+        text: this.i18n.text
 //...
         });
       } else {
         this.setState({
 //...
-          text_appname: defaultText['text_appname'],
-          text_restart_label: defaultText['text_restart_label'],
-          text_settings_label: defaultText['text_settings_label'],
-          text_help_label: defaultText['text_help_label'],
-          text_about_label: defaultText['text_about_label'],
-          text_close_label: defaultText['text_close_label'],
-          text_youwon: defaultText['text_youwon'],
-          text_youlost: defaultText['text_youlost'],
-          text_drawn: defaultText['text_drawn'],
-//...
+        language: 'en',
+        text: defaultText
         });
       }
     }

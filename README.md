@@ -33,7 +33,7 @@ The constructor accepts these optional parameters:
 In this example, this.saveState is a function which reloads the translated strings:
 
 ```js
-this.i18n = new I18n(this.saveState);
+this.i18n = new I18n(() => {this.forceUpdate()});
 ```
 
 ## Changing language
@@ -43,7 +43,7 @@ For changing the language, it's possible to call the change_language_translate_a
 In this example, event.target.value cotains the code of the selected language (for example, 'en', 'it', etc...):
 
 ```js
-this.i18n.change_language_translate_and_save_to_localStorage(event.target.value);
+this.i18n.change_language_translate_and_save_to_localStorage(language);
 ```
 
 ## Providing the translations
@@ -84,22 +84,39 @@ const defaultText = require ('./en.json');
 //...
 class Board extends React.Component {
 //...
-    saveState () {
-      if (this.i18n.text) {
-        this.setState({
+  constructor(props) {
 //...
-        language: this.i18n.language,
-        text: this.i18n.text
+        this.i18n = { language: 'en', text: defaultText};
 //...
-        });
-      } else {
-        this.setState({
+  }
 //...
-        language: 'en',
-        text: defaultText
-        });
-      }
+  componentDidMount() {
+//...
+    // Localize the User Interface.
+    this.i18n = new I18n(() => {this.forceUpdate()});
+//...
+  }
+//...
+  handleSettingsChange(/* ... */ language) {
+//...
+    if (this.i18n.language !== language) {
+      this.i18n.change_language_translate_and_save_to_localStorage(language);
+//...
     }
 //...
+  }
+//...
+  render() {
+//...
+    return (
+			<AppWithTopBar refprop={this.notesListRef} lang={this.i18n.language} appname={this.i18n.text['text_appname']}
+			  icons={[{label: this.i18n.text['text_add_label'], icon: 'add', callback: () => this.addNote()},
+//...
+								{label: this.i18n.text['text_about_label'], icon: 'info', callback: () =>  open_dialog(this.notesListRef, 'about')}]} >
+...
+        </AppWithTopBar>
+    );
+  }
+}
+//...
 ```
-

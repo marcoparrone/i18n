@@ -107,10 +107,10 @@ class Board extends React.Component {
   render() {
 //...
     return (
-			<AppWithTopBar refprop={this.notesListRef} lang={this.i18n.language} appname={this.i18n.text['text_appname']}
-			  icons={[{label: this.i18n.text['text_add_label'], icon: 'add', callback: () => this.addNote()},
+      <AppWithTopBar refprop={this.notesListRef} lang={this.i18n.language} appname={this.i18n.text['text_appname']}
+        icons={[{label: this.i18n.text['text_add_label'], icon: 'add', callback: () => this.addNote()},
 //...
-								{label: this.i18n.text['text_about_label'], icon: 'info', callback: () =>  open_dialog(this.notesListRef, 'about')}]} >
+                {label: this.i18n.text['text_about_label'], icon: 'info', callback: () =>  open_dialog(this.notesListRef, 'about')}]} >
 ...
         </AppWithTopBar>
     );

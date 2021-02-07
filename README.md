@@ -60,25 +60,23 @@ be.json  co.json   en.json  fi.json  gu.json  hr.json   is.json  kk.json  la.jso
 bg.json  cs.json   eo.json  fr.json  ha.json  ht.json   it.json  km.json  lb.json  mk.json  my.json  pa.json  rw.json  sn.json  sv.json  tk.json  ur.json  zh-CN.json
 $ cat  public/i18n/en.json
 {
-    "text_appname": "Tic Tac Toe",
-    "text_restart_label": "restart game",
+    "text_appname": "Notes",
+    "text_add_label": "add a note",
     "text_settings_label": "settings",
+    "text_importexport_label": "import and export notes",
     "text_help_label": "help",
-    "text_about_label": "about",
-    "text_close_label": "close",
-    "text_youwon": "You Won!",
-    "text_youlost": "You Lost!",
-    "text_drawn": "The game was drawn!"
+    "text_about_label": "about"
 }
 ```
 
 ## Using the translations
 
-The translations are available in the text instance variable.
-
-for example, inside a custom react component, this method reloads the strings:
+In the following examle you can see how to use the libray.
 
 ```js
+//...
+import I18n from '@marcoparrone/i18n';
+//...
 const defaultText = require ('./en.json');
 
 //...

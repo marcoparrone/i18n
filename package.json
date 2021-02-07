@@ -1,6 +1,6 @@
 {
   "name": "@marcoparrone/i18n",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Internationalization library for JavaScript.",
   "main": "src/index.js",
   "scripts": {
